@@ -1,0 +1,13 @@
+apiVersion: wildfly.org/v1alpha1
+kind: WildFlyServer
+metadata:
+  name: server
+spec:
+  applicationImage: "ospoc/server:latest"
+  replicas: 2
+  storage:
+    volumeClaimTemplate:
+      spec:
+        resources:
+          requests:
+            storage: 3Gi
