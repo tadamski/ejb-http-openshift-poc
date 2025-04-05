@@ -1,0 +1,30 @@
+Notatki:
+* clone https://github.com/wildfly/wildfly-operator
+* install go
+* login to local openshift as admin
+* w katalogu operatora: make clean, make deploy
+* dodać rolę widfly-operator dla developera
+* usuwanie przez kubectl: kubectl delete wildflyserver quickstart
+
+
+* adres podu w stateful secie jest taki: server-0.server-headless.ospoc.svc.cluster.local:8080
+trzeba sprawdzic jak sie nazywa serwer headless bo to on wyznacza
+* oc set image-lookup client 
+to jednak po cos jest bo tez tego mialem image pull error
+
+
+ha-proxy:
+* jak byl problem z deinstalacja to pomoglo cos takiego: helm uninstall haproxy-ingress -n ospoc --no-hooks
+
+helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
+helm install haproxy-ingress haproxy-ingress/haproxy-ingress\
+  --namespace=ospoc\
+  --set controller.image.tag=latest\
+  --set controller.image.pullPolicy=Never
+  
+  old
+  helm install haproxy-ingress haproxy-ingress/haproxy-ingress\
+  --namespace=ospoc\
+  --set controller.image.repository=ospoc/haproxy-ingress\
+  --set controller.image.tag=latest\
+  --set controller.image.pullPolicy=Never

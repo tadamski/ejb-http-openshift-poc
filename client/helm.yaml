@@ -1,5 +1,6 @@
 image: 
- name: client
+  name: default-route-openshift-image-registry.apps-crc.testing/ospoc/client
+  tag: latest
 build:
   enabled: false
 deploy:

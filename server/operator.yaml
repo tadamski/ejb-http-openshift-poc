@@ -3,7 +3,7 @@ kind: WildFlyServer
 metadata:
   name: server
 spec:
-  applicationImage: "ospoc/server:latest"
+  applicationImage: "default-route-openshift-image-registry.apps-crc.testing/server:latest"
   replicas: 2
   storage:
     volumeClaimTemplate:
