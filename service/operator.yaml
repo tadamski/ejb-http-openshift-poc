@@ -1,13 +1,13 @@
 apiVersion: wildfly.org/v1alpha1
 kind: WildFlyServer
-metadata:
-  name: server
 spec:
-  applicationImage: "default-route-openshift-image-registry.apps-crc.testing/server:latest"
-  replicas: 2
+  applicationImage: "default-route-openshift-image-registry.apps-crc.testing/ospoc/service:latest"
   storage:
     volumeClaimTemplate:
       spec:
         resources:
           requests:
             storage: 3Gi
+  replicas: 2
+metadata:
+  name: b

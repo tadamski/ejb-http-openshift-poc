@@ -24,5 +24,5 @@ config: |
     log global
     stick-table type string len 36 size 1m expire 8h
     stick on cookie(JSESSIONID)
-    server node0 server-0.server-headless.ospoc.svc.cluster.local
-    server node1 server-1.server-headless.ospoc.svc.cluster.local
+    server node0 {{ .Release.Name }}-0.{{ .Release.Name }}-headless.ospoc.svc.cluster.local
+    server node1 {{ .Release.Name }}-1.{{ .Release.Name }}-headless.ospoc.svc.cluster.local

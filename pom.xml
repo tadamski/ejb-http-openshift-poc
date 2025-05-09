@@ -19,7 +19,7 @@
     
     <modules>
        <module>client</module>
-       <module>server</module>
+       <module>service</module>
     </modules>
 
     <dependencyManagement>
