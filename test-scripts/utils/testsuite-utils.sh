@@ -16,8 +16,11 @@ create_testsuite_namespace() {
 install_wildfly_operator() {
   echo "logging as kubeadmin"
   oc login -u kubeadmin -p kubeadmin https://api.crc.testing:6443 > /dev/null
-  #FIXME
-  cd /home/tomek/workspace/wildfly-operator || exit
+  if [[ -z "$OPERATOR_DIR" ]]; then
+      echo "Must provide the directory of wildfly-operator in OPERATOR_DIR variable" 1>&2
+      exit 1
+  fi
+  cd "$OPERATOR_DIR" || exit
   echo "installing operator"
   make install >> /dev/null
   make deploy >> /dev/null
