@@ -1,4 +1,4 @@
 #!/bin/bash
-source testsuite-utils.sh
+source utils/testsuite-utils.sh
 
 before_testsuite

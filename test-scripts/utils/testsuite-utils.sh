@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_DIR=$(pwd)
+PROJECT_DIR=$(pwd)/..
 
 prepare_crc_env() {
   eval "$(crc oc-env)"
